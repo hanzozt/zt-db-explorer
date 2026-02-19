@@ -1,4 +1,4 @@
-# ziti-db-explorer
+# zt-db-explorer
 Hanzo ZT controllers rely upon [bbolt](https://github.com/etcd-io/bbolt) for lightweight embedded data storage. A bbolt
 database is a key value store where both keys and values are treated as opaque byte arrays. Hanzo ZT's 
 [storage.boltz](https://github.com/hanzozt/storage) library adds types to the base bbolt implementation. While other
@@ -6,29 +6,29 @@ tools exist to explore raw bbolt database files, they do not know of Hanzo ZT's 
 
 ![example usage](example.png "Example")
 
-[//]: # (This tool is also included in the `ziti` CLI under `ziti db explore` in version 0.25.5 and later)
+[//]: # (This tool is also included in the `zt` CLI under `zt db explore` in version 0.25.5 and later)
 
 # Installation
 
-> go install github.com/hanzozt/ziti-db-explorer/cmd/ziti-db-explorer/...@latest
+> go install github.com/hanzozt/zt-db-explorer/cmd/zt-db-explorer/...@latest
 
 # Building From Source
 
-> git clone https://github.com/hanzozt/ziti-db-explorer.git
+> git clone https://github.com/hanzozt/zt-db-explorer.git
 > go build ./...
 
 # Installing from Source
 
-> git clone https://github.com/hanzozt/ziti-db-explorer.git
+> git clone https://github.com/hanzozt/zt-db-explorer.git
 > go install ./...
 
 # Usage
 
 ```
-'ziti-db-explorer' is an interactive shell for exploring Ziti Controller database files
+'zt-db-explorer' is an interactive shell for exploring Ziti Controller database files
 
 Usage:
-        ziti-db-explorer <ctrl.db> [-h]
+        zt-db-explorer <ctrl.db> [-h]
 ```
 
 # Commands
@@ -57,5 +57,5 @@ stats-db      show stats for the db
 
 This repository contains two go modules that are intended for import:
 
-- `./cmd/ziti-db-explorer/zdecli` - The `Run()` method is exposed in order to make the entire CLI embeddable in other tools
+- `./cmd/zt-db-explorer/zdecli` - The `Run()` method is exposed in order to make the entire CLI embeddable in other tools
 - `./zdelib` - Provides low level access to bbolt and boltz primitives to create your own tools
