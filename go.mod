@@ -1,11 +1,11 @@
-module github.com/openziti/ziti-db-explorer
+module github.com/hanzozt/ziti-db-explorer
 
 go 1.19
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
 	github.com/fatih/color v1.13.0
-	github.com/openziti/storage v0.1.28
+	github.com/hanzozt/storage v0.1.28
 	github.com/rodaine/table v1.0.1
 	go.etcd.io/bbolt v1.3.6
 )
@@ -23,7 +23,7 @@ require (
 	github.com/mattn/go-tty v0.0.3 // indirect
 	github.com/mgutz/ansi v0.0.0-20200706080929-d51e80ef957d // indirect
 	github.com/michaelquigley/pfxlog v0.6.9 // indirect
-	github.com/openziti/foundation/v2 v2.0.8 // indirect
+	github.com/hanzozt/foundation/v2 v2.0.8 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pkg/term v1.2.0-beta.2 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect

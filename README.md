@@ -1,8 +1,8 @@
 # ziti-db-explorer
-OpenZiti controllers rely upon [bbolt](https://github.com/etcd-io/bbolt) for lightweight embedded data storage. A bbolt
-database is a key value store where both keys and values are treated as opaque byte arrays. OpenZiti's 
-[storage.boltz](https://github.com/openziti/storage) library adds types to the base bbolt implementation. While other
-tools exist to explore raw bbolt database files, they do not know of OpenZiti's type system.
+Hanzo ZT controllers rely upon [bbolt](https://github.com/etcd-io/bbolt) for lightweight embedded data storage. A bbolt
+database is a key value store where both keys and values are treated as opaque byte arrays. Hanzo ZT's 
+[storage.boltz](https://github.com/hanzozt/storage) library adds types to the base bbolt implementation. While other
+tools exist to explore raw bbolt database files, they do not know of Hanzo ZT's type system.
 
 ![example usage](example.png "Example")
 
@@ -10,16 +10,16 @@ tools exist to explore raw bbolt database files, they do not know of OpenZiti's 
 
 # Installation
 
-> go install github.com/openziti/ziti-db-explorer/cmd/ziti-db-explorer/...@latest
+> go install github.com/hanzozt/ziti-db-explorer/cmd/ziti-db-explorer/...@latest
 
 # Building From Source
 
-> git clone https://github.com/openziti/ziti-db-explorer.git
+> git clone https://github.com/hanzozt/ziti-db-explorer.git
 > go build ./...
 
 # Installing from Source
 
-> git clone https://github.com/openziti/ziti-db-explorer.git
+> git clone https://github.com/hanzozt/ziti-db-explorer.git
 > go install ./...
 
 # Usage

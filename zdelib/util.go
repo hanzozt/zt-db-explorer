@@ -15,7 +15,7 @@ package zdelib
 
 import (
 	"errors"
-	"github.com/openziti/storage/boltz"
+	"github.com/hanzozt/storage/boltz"
 	"go.etcd.io/bbolt"
 	"os"
 	"time"
