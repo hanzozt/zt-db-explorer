@@ -15,7 +15,7 @@ package zdecli
 
 import (
 	"github.com/c-bata/go-prompt"
-	"github.com/hanzozt/ziti-db-explorer/zdelib"
+	"github.com/hanzozt/zt-db-explorer/zdelib"
 	"strings"
 )
 

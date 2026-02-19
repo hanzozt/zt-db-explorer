@@ -13,7 +13,7 @@
 package main
 
 import (
-	"github.com/hanzozt/ziti-db-explorer/cmd/ziti-db-explorer/zdecli"
+	"github.com/hanzozt/zt-db-explorer/cmd/zt-db-explorer/zdecli"
 	"log"
 	"os"
 )

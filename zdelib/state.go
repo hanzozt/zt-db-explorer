@@ -36,7 +36,7 @@ func NewState(path string) (*State, error) {
 
 	if err != nil {
 		if err == bbolt.ErrTimeout {
-			log.Print("Could not acquire db lock. Ensure the ziti controller is stopped.");
+			log.Print("Could not acquire db lock. Ensure the zt controller is stopped.");
 		}
 		return nil, err
 	}

@@ -29,9 +29,9 @@ jobs:
           BUILD_DATE=$(date -u "+%F %T+00:00")
           GIT_COMMIT=$(git rev-parse --short HEAD)
           GIT_BRANCH=$(git branch --show-current)
-          REPO_PREFIX="github.com/hanzozt/ziti-db-explorer"
+          REPO_PREFIX="github.com/hanzozt/zt-db-explorer"
           go build -ldflags "-X '$REPO_PREFIX/zdelib.Commit=$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.Branch=$GIT_BRANCH' -X '$REPO_PREFIX/zdelib.Version=$GIT_LAST_VERSION-$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.BuildDate=$BUILD_DATE'" -o "./" ./...
-          tar -cvf ziti-db-explorer.tar ./ziti-db-explorer
+          tar -cvf zt-db-explorer.tar ./zt-db-explorer
 
       - name: List
         run: |
@@ -45,8 +45,8 @@ jobs:
       - name: Save Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ziti-db-explorer.mac.x64
-          path: ./ziti-db-explorer.tar
+          name: zt-db-explorer.mac.x64
+          path: ./zt-db-explorer.tar
 
 
 
@@ -74,7 +74,7 @@ jobs:
           $BUILD_DATE=get-date -AsUTC -Format "yyyy-MM-dd HH:mm:ss+00:00"
           $GIT_COMMIT=git rev-parse --short HEAD
           $GIT_BRANCH=git branch --show-current
-          $REPO_PREFIX="github.com/hanzozt/ziti-db-explorer"
+          $REPO_PREFIX="github.com/hanzozt/zt-db-explorer"
           go build -ldflags "-X '$REPO_PREFIX/zdelib.Commit=$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.Branch=$GIT_BRANCH' -X '$REPO_PREFIX/zdelib.Version=$GIT_LAST_VERSION-$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.BuildDate=$BUILD_DATE'" -o "./" ./...
       - name: List
         run: |
@@ -87,8 +87,8 @@ jobs:
       - name: Save Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ziti-db-explorer.windows.x64
-          path: ./ziti-db-explorer.exe
+          name: zt-db-explorer.windows.x64
+          path: ./zt-db-explorer.exe
 
   linux-build:
     name: Build Linux Binaries
@@ -114,9 +114,9 @@ jobs:
           BUILD_DATE=$(date -u "+%F %T+00:00")
           GIT_COMMIT=$(git rev-parse --short HEAD)
           GIT_BRANCH=$(git branch --show-current)
-          REPO_PREFIX="github.com/hanzozt/ziti-db-explorer"
+          REPO_PREFIX="github.com/hanzozt/zt-db-explorer"
           go build -ldflags "-X '$REPO_PREFIX/zdelib.Commit=$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.Branch=$GIT_BRANCH' -X '$REPO_PREFIX/zdelib.Version=$GIT_LAST_VERSION-$GIT_COMMIT' -X '$REPO_PREFIX/zdelib.BuildDate=$BUILD_DATE'" -o "./" ./...
-          tar -cvf ziti-db-explorer.tar ./ziti-db-explorer
+          tar -cvf zt-db-explorer.tar ./zt-db-explorer
       - name: List
         run: |
           pwd
@@ -129,8 +129,8 @@ jobs:
       - name: Save Artifact
         uses: actions/upload-artifact@v2
         with:
-          name: ziti-db-explorer.linux.x64
-          path: ./ziti-db-explorer.tar
+          name: zt-db-explorer.linux.x64
+          path: ./zt-db-explorer.tar
   release:
     name: Create Release
     runs-on: ubuntu-latest
@@ -146,18 +146,18 @@ jobs:
         run: |
           pwd
           ls -la
-          ls -la ziti-db-explorer.linux.x64
-          ls -la ziti-db-explorer.windows.x64
-          ls -la ziti-db-explorer.mac.x64
+          ls -la zt-db-explorer.linux.x64
+          ls -la zt-db-explorer.windows.x64
+          ls -la zt-db-explorer.mac.x64
       - name: Compress Artifacts
         run: |
-          zip ./ziti-db-explorer.windows.x64.zip ./ziti-db-explorer.windows.x64/ziti-db-explorer.exe
+          zip ./zt-db-explorer.windows.x64.zip ./zt-db-explorer.windows.x64/zt-db-explorer.exe
           
-          gzip ./ziti-db-explorer.linux.x64/ziti-db-explorer.tar
-          mv ./ziti-db-explorer.linux.x64/ziti-db-explorer.tar.gz ./ziti-db-explorer.linux.x64.tar.gz
+          gzip ./zt-db-explorer.linux.x64/zt-db-explorer.tar
+          mv ./zt-db-explorer.linux.x64/zt-db-explorer.tar.gz ./zt-db-explorer.linux.x64.tar.gz
           
-          gzip ./ziti-db-explorer.mac.x64/ziti-db-explorer.tar
-          mv ./ziti-db-explorer.mac.x64/ziti-db-explorer.tar.gz ./ziti-db-explorer.mac.x64.tar.gz
+          gzip ./zt-db-explorer.mac.x64/zt-db-explorer.tar
+          mv ./zt-db-explorer.mac.x64/zt-db-explorer.tar.gz ./zt-db-explorer.mac.x64.tar.gz
           
           ls -la
 
@@ -178,8 +178,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} #ref's the URL for the release created above
-          asset_path: ./ziti-db-explorer.linux.x64.tar.gz
-          asset_name: ziti-db-explorer.linux.x64.tar.gz
+          asset_path: ./zt-db-explorer.linux.x64.tar.gz
+          asset_name: zt-db-explorer.linux.x64.tar.gz
           asset_content_type: application/gzip
 
       - name: Upload MacOs Binary
@@ -188,8 +188,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} #ref's the URL for the release created above
-          asset_path: ./ziti-db-explorer.mac.x64.tar.gz
-          asset_name: ziti-db-explorer.mac.x64.tar.gz
+          asset_path: ./zt-db-explorer.mac.x64.tar.gz
+          asset_name: zt-db-explorer.mac.x64.tar.gz
           asset_content_type: application/gzip
 
       - name: Upload Windows Binary
@@ -198,6 +198,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} #ref's the URL for the release created above
-          asset_path: ./ziti-db-explorer.windows.x64.zip
-          asset_name: ziti-db-explorer.windows.x64.zip
+          asset_path: ./zt-db-explorer.windows.x64.zip
+          asset_name: zt-db-explorer.windows.x64.zip
           asset_content_type: application/zip

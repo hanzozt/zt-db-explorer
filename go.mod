@@ -1,4 +1,4 @@
-module github.com/hanzozt/ziti-db-explorer
+module github.com/hanzozt/zt-db-explorer
 
 go 1.19
 

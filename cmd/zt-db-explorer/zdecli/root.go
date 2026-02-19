@@ -15,17 +15,17 @@ package zdecli
 import (
 	"fmt"
 	"github.com/c-bata/go-prompt"
-	"github.com/hanzozt/ziti-db-explorer/zdelib"
+	"github.com/hanzozt/zt-db-explorer/zdelib"
 	"log"
 	"os"
 	"strings"
 )
 
 // CommandName allow usage and such to be altered to fit a hosting executable
-var CommandName = "ziti-db-explorer"
+var CommandName = "zt-db-explorer"
 
-// Run is called by main() and is provided so that ziti-db-explorer can be embedded in other CLIs. commandName should
-// be the full command to run ziti-db-explorer (e.g. ziti db explore).
+// Run is called by main() and is provided so that zt-db-explorer can be embedded in other CLIs. commandName should
+// be the full command to run zt-db-explorer (e.g. zt db explore).
 func Run(commandName, arg string) error {
 	if commandName != "" {
 		CommandName = commandName
