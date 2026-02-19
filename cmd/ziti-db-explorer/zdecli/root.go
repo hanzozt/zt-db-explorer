@@ -15,7 +15,7 @@ package zdecli
 import (
 	"fmt"
 	"github.com/c-bata/go-prompt"
-	"github.com/openziti/ziti-db-explorer/zdelib"
+	"github.com/hanzozt/ziti-db-explorer/zdelib"
 	"log"
 	"os"
 	"strings"
